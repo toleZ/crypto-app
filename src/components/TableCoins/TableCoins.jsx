@@ -12,11 +12,11 @@ import CoinsListContainer from "../CoinsListContainer/CoinsListContainer";
 
 const TableCoins = () => {
   return (
-    <TableContainer py={10}>
+    <TableContainer pt={10}>
       <Table variant="simple">
         <TableCaption>
           Crypto List by '
-          <Link href="https://github.com/tolez" isExternal>
+          <Link href="https://github.com/tolez" isExternal color="orange.500">
             tolez
           </Link>
           '

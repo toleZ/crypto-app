@@ -4,27 +4,33 @@ import { useContext, useState } from "react";
 import { CoinsContext } from "../../context/CoinsContext";
 
 const SearchInput = () => {
-  const {addFilterCoins} = useContext(CoinsContext)
-  const [searchValue, setSearchValue] = useState('')
+  const { addFilterCoins } = useContext(CoinsContext);
+  const [searchValue, setSearchValue] = useState("");
 
   const handleChange = (e) => {
-    setSearchValue(e.target.value)
-  }
+    setSearchValue(e.target.value);
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    addFilterCoins(searchValue)
-  }
+    e.preventDefault();
+    addFilterCoins(searchValue);
+  };
 
   return (
-    <InputGroup position='fixed' bgColor='white'>
+    <InputGroup position="fixed" bgColor={"blackAlpha.600"}>
       <InputLeftElement>
-        <Button size='xs' onClick={handleSubmit}>
+        <Button size="xs" onClick={handleSubmit}>
           <SearchIcon />
         </Button>
       </InputLeftElement>
 
-      <Input variant='flushed' type="search" placeholder="Coin to search" onChange={handleChange} value={searchValue}/>
+      <Input
+        variant="flushed"
+        type="search"
+        placeholder="Coin to search"
+        onChange={handleChange}
+        value={searchValue}
+      />
     </InputGroup>
   );
 };

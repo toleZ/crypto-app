@@ -1,14 +1,16 @@
-import { Image, Td, Text, Tr } from "@chakra-ui/react";
+import { HStack, Image, Td, Text, Tr, VStack } from "@chakra-ui/react";
 
 const CoinRow = ({ coin }) => {
   return (
     <Tr>
       <Td>
-        <Image boxSize="32px" src={coin.image} alt={coin.id} />{" "}
-        <Text color="black">{coin.name} </Text>
-        <Text color="lightgrey" as="kbd">
-          {coin.symbol}
-        </Text>{" "}
+        <HStack>
+          <Image boxSize="32px" src={coin.image} alt={coin.id} />
+          <VStack align={"flex-start"} spacing={0.5}>
+            <Text color="whiteAlpha.800">{coin.name} </Text>
+            <Text color="whiteAlpha.500">{coin.symbol}</Text>
+          </VStack>
+        </HStack>
       </Td>
       <Td isNumeric>${coin.current_price}</Td>
       <Td
